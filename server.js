@@ -1,22 +1,18 @@
-// Require Dependancies
+// Require Dependancies - express & routes
 const express = require('express');
+const apiRoutes  = require("./routes/api");
+const htmlRoutes = require("./routes/html");
+
+// Initialize app and create port
 const app = express();
-
 const PORT = process.env.PORT || 3001;
-
-// import modular routers for /api and /
-// api route
-const api = require("./routes/api");
-app.use('/api', api);
-
-// html route
-const html = require("./routes/html");
-app.use('/', html);
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use('/api', apiRoutes);
+app.use('/', htmlRoutes);
 
 
 // server listener

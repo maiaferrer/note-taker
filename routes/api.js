@@ -1,5 +1,7 @@
 // add dependencies
-
+const path = require('path');
+const router = require('express').Router();
+const fs = require('fs');
 // creates a random ID
 
 // database dependency
@@ -11,3 +13,4 @@
 // DELETE for a specific note
 
 // export 
+module.exports = router;
