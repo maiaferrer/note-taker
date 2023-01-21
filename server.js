@@ -1,11 +1,17 @@
 // Require Dependancies
 const express = require('express');
+const app = express();
 const path = require('path');
-const fs = require('fs');
 
 const PORT = process.env.PORT || 3001;
 
+// import modular routers for /api and /
+// api route
 
+// html route
+
+
+// Middleware for parsing JSON and urlencoded form data
 
 
 
