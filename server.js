@@ -7,11 +7,11 @@ const PORT = process.env.PORT || 3001;
 // import modular routers for /api and /
 // api route
 const api = require("./routes/api");
-app.use(api);
+app.use('/api', api);
 
 // html route
 const html = require("./routes/html");
-app.use(html);
+app.use('/', html);
 
 // Middleware for parsing JSON and urlencoded form data
 app.use(express.json());
