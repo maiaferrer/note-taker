@@ -1,6 +1,1 @@
-[
-    {
-        "title":"Test Title",
-        "text":"Test text"
-    }
-]
+[{"title":"Test Title","text":"Test text"},{"title":"Todos","text":"clean house\nfeed dogs\n","note_id":"f47e7b2c-bd45-4610-9e7a-2adb60a0a126"},{"title":"Hellow","text":"this is a note","note_id":"ac65d493-1337-4ae1-8fbd-51584bc829c2"},{"title":"test","text":"test","note_id":"191bae60-5f49-4773-8b32-cd84bc398455"}]
