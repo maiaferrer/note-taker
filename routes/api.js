@@ -53,10 +53,10 @@ else {
 // read all notes from the db.json file
 // remove note with given id property
 // rewrite notes to the db.json
-router.delete('/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
    const readDb = JSON.parse(fs.readFileSync('./db/db.json'))
 
-   const userDeleteNote = readDb.filter((newNote) => newNote.note_id !== noteId);
+   const userDeleteNote = readDb.filter((newNote) => newNote.note_id);
     
     fs.writeFile("./db/db.json", JSON.stringify(userDeleteNote), (err, del) => {
         if (err) {
