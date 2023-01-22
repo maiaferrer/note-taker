@@ -54,7 +54,18 @@ else {
 // remove note with given id property
 // rewrite notes to the db.json
 router.delete('/:id', (req, res) => {
+   const readDb = JSON.parse(fs.readFileSync('./db/db.json'))
 
+   const userDeleteNote = readDb.filter((newNote) => newNote.note_id !== noteId);
+    
+    fs.writeFile("./db/db.json", JSON.stringify(userDeleteNote), (err, del) => {
+        if (err) {
+            console.log(err)
+            res.status(500).send()
+            return;
+        }
+    });
+    res.json(userDeleteNote);
 });
 
 // export 
