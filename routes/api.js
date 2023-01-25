@@ -21,10 +21,10 @@ router.post('/notes', (req, res) => {
     const {title , text} = req.body;
 
     if (title && text) {
-        const newNote = {
+        let newNote = {
             title,
             text,
-            note_id: uuidv4(),
+            id: uuidv4(),
         };
     fs.readFile('./db/db.json', (err, file) => {
         if (err) {
@@ -55,8 +55,7 @@ else {
 // rewrite notes to the db.json
 router.delete('/notes/:id', (req, res) => {
    const readDb = JSON.parse(fs.readFileSync('./db/db.json'))
-
-   const userDeleteNote = readDb.filter((newNote) => newNote.note_id);
+   const userDeleteNote = readDb.filter((newNote) => newNote.id);
     
     fs.writeFile("./db/db.json", JSON.stringify(userDeleteNote), (err, del) => {
         if (err) {
