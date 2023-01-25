@@ -1,9 +1,9 @@
 # note-taker
-
 # Team Profile Generator
 [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-![]()
+![Landing Page](./media/Landing.png)
+![Notes Page](./media/Notes.png)
 
 ## Project Description
 Note-Taker is an application that can be used to write and save notes. This app uses Express.js back end and will save and retrieve note data from a JSON file. 
