@@ -57,16 +57,18 @@ else {
 router.delete('/notes/:id', (req, res) => {
    const readDb = JSON.parse(fs.readFileSync('./db/db.json'))
    const userDeleteNote = readDb.filter((newNote) => req.params.id);
-   console.log(userDeleteNote)
+   if(userDeleteNote === -1) 
+   return res.json({})
+   readDb.splice(userDeleteNote, 1)
     
-    fs.writeFile("./db/db.json", JSON.stringify(userDeleteNote), (err, del) => {
+    fs.writeFile("./db/db.json", JSON.stringify(readDb), (err, del) => {
         if (err) {
             console.log(err)
             res.status(500).send()
             return;
         }
     });
-    res.json(userDeleteNote);
+    res.json(readDb);
 });
 
 // export 
